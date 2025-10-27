@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import "./App.css";
 import "./index.css"
 import Header from "./components/Header.jsx";
+import {useGSAP} from "@gsap/react"
+import gsap from "gsap"
 import Body from "./components/Body.jsx";
 import Recipe from "./components/recipe.jsx";
 import ListOfIngredients from "./components/listofingredients.jsx";
@@ -102,6 +104,28 @@ export default function App() {
     setShowRecipe((prev) => !prev);
   }
 
+
+
+useGSAP(()=>{
+  gsap.fromTo('.homes', {
+rotation:360,
+yoyo:true,
+repeat:-1,
+opacity:0,
+backgroundColor:"green"
+  },{
+rotation:0,
+yoyo:true,
+repeat:-1,
+ease:'expo.inOut',
+opacity:1,
+borderRadius:"50%",
+scale:1.3,
+duration:1,
+backgroundColor:"orange"
+  })
+})
+
   return (
     <>
       <Header />
@@ -115,7 +139,9 @@ export default function App() {
       />
 
       {error && <p style={{ color: "red" }}>{error}</p>}
-      {loading && <p>Loading recipe...</p>}
+      {loading && <div className=" fixed backdrop-blur bg-transparent  inset-0 flex items-center items-center justify-center ">
+        <div className="spinner"></div>
+        </div>}
 
       {showRecipe && !loading && !error && recipeText && (
         <Recipe recipeText={recipeText} selectedIngredients={ingredients} />
