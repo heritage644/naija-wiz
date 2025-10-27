@@ -1,174 +1,3 @@
-/*import React from "react"
-import "./App.css"
-import Header from "./components/Header.jsx"
-import Body from "./components/Body.jsx"
-import Recipe from "./components/recipe.jsx"
-
-import ListOfIngredients from "./components/listofingredients.jsx"
-
-export default function App() {
- const [customIngredients, setCustomIngredients] = React.useState([])
- const [showRecipe, setShowRecipe] = React.useState(false)
- 
-
-
- // Handle form submission from Body component
- function handleSubmit(event) {
-   event.preventDefault()
-   const formData = new FormData(event.target)
-   const ingredient = formData.get("ingredient")
-   
-   if (ingredient && ingredient.trim()) {
-     setCustomIngredients(prev => [...prev, ingredient.trim()])
-     event.target.reset() // Clear the form
-   }
- }
-
- // Toggle recipe visibility
- function toggleRecipe() {
-   setShowRecipe(prev => !prev)
- }
-
- // Remove ingredient from custom list
- function removeIngredient(indexToRemove) {
-   setCustomIngredients(prev => 
-     prev.filter((_, index) => index !== indexToRemove)
-   )
- }
-
- // Combine all the whole ingredients
- const allIngredients = [...customIngredients]
-
- // Create ingredients list items for displaying
- const ingredientsListItems = allIngredients.map((ingredient, index) => (
-   <li key={index} >
-     {ingredient}
-     <button className="newBtn"
-       onClick={() => removeIngredient(index)}
-       >
-         Delete Item
-     </button>
-   </li>
- ))
-
- return (
-   <>
-     <Header />
-     <Body handleSubmit={handleSubmit} />
-     <ListOfIngredients 
-       ingredientsList={allIngredients}
-       ingredientsListItems={ingredientsListItems}
-       showRecipe={showRecipe}
-       
-     />
-     {showRecipe && (
-       <Recipe selectedIngredients={allIngredients}
-   
-     />
-     
-     )}
-   </>
- )
-}
-import React from "react";
-import "./App.css";
-import Header from "./components/Header.jsx";
-import Body from "./components/Body.jsx";
-import Recipe from "./components/recipe.jsx";
-import ListOfIngredients from "./components/listofingredients.jsx";
-
-export default function App() {
- const [customIngredients, setCustomIngredients] = React.useState([]);
- const [showRecipe, setShowRecipe] = React.useState(false);
- const [recipeData, setRecipeData] = React.useState(null);
- const [loading, setLoading] = React.useState(false);
- const [error, setError] = React.useState(null);
-
- // Handle form submission from Body component
- function handleSubmit(event) {
-   event.preventDefault();
-   const formData = new FormData(event.target);
-   const ingredient = formData.get("ingredient");
-
-   if (ingredient && ingredient.trim()) {
-     setCustomIngredients((prev) => [...prev, ingredient.trim()]);
-     event.target.reset(); // Clear the form
-   }
- }
-
- // Remove ingredient from custom list
- function removeIngredient(indexToRemove) {
-   setCustomIngredients((prev) =>
-     prev.filter((_, index) => index !== indexToRemove)
-   );
- }
-
- // Fetch recipe from backend
- async function fetchRecipe() {
-   try {
-     setLoading(true);
-     setError(null);
-     const query = encodeURIComponent(customIngredients.join(", "));
-     const response = await fetch(`http://localhost:5000/api/recipe?ingredients=${query}`);
-     const data = await response.json();
-
-     if (!response.ok) {
-       throw new Error(data.error || "Failed to fetch recipe");
-     }
-
-     setRecipeData(data.recipe);
-   } catch (err) {
-     setError(err.message);
-     setRecipeData(null);
-   } finally {
-     setLoading(false);
-   }
- }
-
- // Toggle recipe visibility and fetch when showing
- function toggleRecipe() {
-   if (!showRecipe) {
-     fetchRecipe();
-   }
-   setShowRecipe((prev) => !prev);
- }
-
- // Combine all ingredients
- const allIngredients = [...customIngredients];
-
- // Create ingredients list items for displaying
- const ingredientsListItems = allIngredients.map((ingredient, index) => (
-   <li key={index}>
-     {ingredient}
-     <button className="newBtn" onClick={() => removeIngredient(index)}>
-       Delete Item
-     </button>
-   </li>
- ));
-
- return (
-   <>
-     <Header />
-     <Body handleSubmit={handleSubmit} />
-     <ListOfIngredients
-       ingredientsList={allIngredients}
-       ingredientsListItems={ingredientsListItems}
-       showRecipe={showRecipe}
-       clickItem={toggleRecipe} 
-     />
-     {showRecipe && (
-       <>
-         {loading && <p>Loading recipe...</p>}
-         {error && <p style={{ color: "red" }}>{error}</p>}
-         {!loading && !error && recipeData && (
-           <Recipe selectedIngredients={allIngredients} recipeText={recipeData} />
-         )}
-       </>
-     )}
-   </>
- );
-}
-*/
 import { motion } from "framer-motion"
 import React, { useState } from "react";
 import "./App.css";
@@ -209,9 +38,15 @@ export default function App() {
   const ingredientsListItems = ingredients.map((ing, idx) => (
     <li key={idx}>
       {ing}
-      <button className="newBtn" onClick={() => removeIngredient(idx)}>
+      <motion.button className="bg-orange-400 flex text-[15px] 
+      lg:w-100 lg:py-1.5
+      rounded-lg text-white w-50 items-centr justify-center" 
+        whileHover={{scale:1.03}}
+               whileTap={{scale:0.9}}
+               transition={{type:"spring", stiffness:400, damping:17 }}
+      onClick={() => removeIngredient(idx)}>
         Delete Item
-      </button>
+      </motion.button>
     </li>
   ));
 

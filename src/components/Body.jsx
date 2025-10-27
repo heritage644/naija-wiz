@@ -11,7 +11,7 @@ return (
                     name="ingredient"
                     required
                 />
-                <button className="bg-green-500 w-fit p-2 text-[10px] rounded-lg  " type="submit">Add Ingredient</button>
+                <button className="bg-green-500 w-fit p-2 text-[10px] lg:text-[15px] rounded-lg" type="submit">Add Ingredient</button>
             </form>
         </main>
     )
