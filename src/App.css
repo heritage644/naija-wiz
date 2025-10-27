@@ -13,7 +13,7 @@ header {
 }
 .text-grad {
 
-  background: linear-gradient(to right, #46e569, #ec8c48); 
+  background: linear-gradient(to right, #41c75e, #ec8c48); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text; 
@@ -52,14 +52,7 @@ main {
 }
 
 .second > button {
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 6px;
-    border: none;
-    font-family: inter, sans-serif;
-    font-size: 0.7rem;
-    width: 150px;
-    font-weight: 500;
+  
 }
 
 /* Section headings */

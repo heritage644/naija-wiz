@@ -37,10 +37,11 @@ return (
 <header className="top-0 sticky ">
     <nav className="flex items-center justify-center backdrop-blur-sm max-w-full shadow-md bg-translucent py-10 space-x-2 z-[1000]">
          <div className="first"> 
-             <img className="w-10 h-8 imgie" src={Cook} alt="chef" />
+             <img className="w-10 h-8 lg:w-20 lg:h-16 imgie" src={Cook} alt="chef" />
         </div>
         <h1 className="font-bold titl
          sm:text-[30px]
+         lg:text-[45px]
          " >Recipe Wiz</h1>
     </nav>
    
