@@ -6,40 +6,28 @@ html, body {
 
 /* Header styles */
 header {
-    background-color: rgb(255, 255, 255);
-    height: 108px;
-    margin-top: 2px;
-    margin-left: 2px;
-    margin-right: 2px;
-    border-radius: 10px;
-    box-shadow:
-        0 1px 3px rgba(0, 0, 0, 0.06),   /* top shadow */
-        0 -1px 3px rgba(0, 0, 0, 0.03),  /* bottom shadow */
-        1px 0 3px rgba(0, 0, 0, 0.04),   /* right shadow */
-        -1px 0 3px rgba(0, 0, 0, 0.04); 
+  
+
+  
+
+}
+.text-grad {
+
+  background: linear-gradient(to right, #46e569, #ec8c48); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; 
+  color: transparent;
+
 }
 
-/* Navigation styles */
-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 9px;
-}
 
 nav > h1 {
-    color: #FF9800;
-    margin-top: 53px;
+   
     font-family: Inter, sans-serif;
 }
 
-/* Logo styles */
-.first > img {
-    width: 30px;
-    height: auto;
-    margin-top: 35px;
-}
+
 
 /* Main content */
 main {
@@ -151,15 +139,6 @@ ul {
 .btn:active {
     transform: translateY(-1px) scale(0.98);
 }
-
-
-
-
-
-
-
-
-
 
 
 
