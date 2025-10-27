@@ -106,25 +106,7 @@ export default function App() {
 
 
 
-useGSAP(()=>{
-  gsap.fromTo('.homes', {
-rotation:360,
-yoyo:true,
-repeat:-1,
-opacity:0,
-backgroundColor:"green"
-  },{
-rotation:0,
-yoyo:true,
-repeat:-1,
-ease:'expo.inOut',
-opacity:1,
-borderRadius:"50%",
-scale:1.3,
-duration:1,
-backgroundColor:"orange"
-  })
-})
+
 
   return (
     <>

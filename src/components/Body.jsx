@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import {useGSAP} from "@gsap/react"
 import gsap from "gsap"
+import HeroText from "./herotext"
 
 export default function Body ({ handleSubmit }){
 useGSAP(()=>{
@@ -32,6 +33,9 @@ ease:'power1.in'
 
 return (
         <main>
+          <section className="items-center flex justify-center mb-20"> 
+            <HeroText/>
+          </section>
             <form onSubmit={handleSubmit} className="second">
                 <input 
                     aria-label="Add Ingredients"
@@ -49,7 +53,7 @@ return (
                  text-type
                  ">Add Ingredient</span></motion.button>
             </form>
-           
+          
 
 
    

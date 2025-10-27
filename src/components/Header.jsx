@@ -1,11 +1,16 @@
 import {useGSAP} from "@gsap/react"
 import gsap from "gsap"
+import { useEffect } from "react";
 import { SplitText } from "gsap/SplitText"
 import Cook from "../assets/cook.png";
 export default function Header (props) {
 
-useGSAP(()=>{
-    const heroSplit =new SplitText('.titl',{type:'chars,words'})
+useEffect(()=>{
+
+
+    document.fonts.ready.then(()=>{
+
+ const heroSplit =new SplitText('.titl',{type:'chars,words'})
     heroSplit.chars.forEach((char)=>char.classList.add('text-grad'))
 
 gsap.fromTo(heroSplit.chars,{
@@ -21,23 +26,28 @@ ease:'power3.out',
 
 });
 
-gsap.fromTo(".imgie",{
-    y:-100,
-    opacity:0
-},{
-y:0,
-ease:'power3.out',
-opacity:1,
-duration:2
-})
-})
+
+});
+   
+
+},[])
 
 
 return (
 <header className="top-0 sticky ">
     <nav className="flex items-center justify-center backdrop-blur-sm max-w-full shadow-md bg-translucent py-10 space-x-2 z-[10000]">
          <div className="first"> 
-             <img className="w-10 h-8 lg:w-20 lg:h-16 imgie" src={Cook} alt="chef" />
+             <lord-icon
+             className=""
+    src="https://cdn.lordicon.com/lftzgwgx.json"
+    trigger="in"
+    delay="1500"
+    stroke="light"
+    state="in-reveal"
+    colors="primary:#545454,secondary:#109121"
+    style={{width:"100px", height:"100px"}}
+   >
+</lord-icon>
         </div>
         <h1 className="font-bold titl
          sm:text-[30px]
