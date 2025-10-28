@@ -8,7 +8,7 @@ import gsap from "gsap"
 import Body from "./components/Body.jsx";
 import Recipe from "./components/recipe.jsx";
 import ListOfIngredients from "./components/listofingredients.jsx";
-
+import Footer from "./components/footer.jsx";
 
 export default function App() {
   const [ingredients, setIngredients] = useState([]);
@@ -121,13 +121,23 @@ export default function App() {
       />
 
       {error && <p style={{ color: "red" }}>{error}</p>}
-      {loading && <div className=" fixed backdrop-blur bg-transparent  inset-0 flex items-center items-center justify-center ">
-        <div className="spinner"></div>
+      {loading && <div className=" fixed backdrop-blur-lg bg-transparent opacity-[1] z-[1000]
+       inset-0 flex items-center items-center justify-center flex-col ">
+        <h1 className="text-[16px] font-bold ">Processing your recipe with love</h1>
+        <lord-icon
+    src="https://cdn.lordicon.com/euaablbm.json"
+    trigger="loop"
+    stroke="bold"
+    state="loop-cycle"
+    colors="primary:#e86830,secondary:#109121"
+    style={{width:"100px", height:"100px"}}>
+</lord-icon>
         </div>}
 
       {showRecipe && !loading && !error && recipeText && (
         <Recipe recipeText={recipeText} selectedIngredients={ingredients} />
       )}
+      <Footer/>
     </>
   );
 }
