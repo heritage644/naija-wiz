@@ -1,22 +1,33 @@
 import { motion } from "framer-motion"
-import React, { useState } from "react";
 import "./App.css";
 import "./index.css"
 import Header from "./components/Header.jsx";
-import {useGSAP} from "@gsap/react"
-import gsap from "gsap"
 import Body from "./components/Body.jsx";
 import Recipe from "./components/recipe.jsx";
 import ListOfIngredients from "./components/listofingredients.jsx";
 import Footer from "./components/footer.jsx";
+import { useStar } from "./components/contextapi/constextapi.jsx";
+import {Routes, Route, Link} from 'react-router-dom'
+import Favourites from "./pages/favourites.jsx";
+import Donate from "./pages/donate.jsx";
+import Search from "./pages/search.jsx";
 
 export default function App() {
-  const [ingredients, setIngredients] = useState([]);
-  const [showRecipe, setShowRecipe] = useState(false);
-  const [recipeText, setRecipeText] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [lastFetchedKey, setLastFetchedKey] = useState(""); // tracks the ingredients used for the last fetched recipe
+const {
+ingredients,
+    setIngredients,
+    showRecipe,
+    setShowRecipe,
+    recipeText,
+    setRecipeText,
+    loading,
+    setLoading,
+    error,
+    setError,
+    lastFetchedKey,
+    setLastFetchedKey
+
+} = useStar()
 
   // Handle form submission from Body component
   function handleSubmit(event) {
@@ -110,7 +121,11 @@ export default function App() {
 
   return (
     <>
+    
       <Header />
+       <Routes>
+        <Route path="/" element={
+          <>
       <Body handleSubmit={handleSubmit} />
 
       <ListOfIngredients
@@ -120,8 +135,8 @@ export default function App() {
         clickItem={handleToggleRecipe}
       />
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      {loading && <div className=" fixed backdrop-blur-lg bg-transparent opacity-[1] z-[1000]
+      {error && <p style={{ color: "red" }} className="items-center flex justify-center ">Error, {error} </p>}
+      {loading && <div className=" fixed backdrop-blur-lg bg-transparent  z-[1000]
        inset-0 flex items-center items-center justify-center flex-col ">
         <h1 className="text-[16px] font-bold ">Processing your recipe with love</h1>
         <lord-icon
@@ -137,7 +152,18 @@ export default function App() {
       {showRecipe && !loading && !error && recipeText && (
         <Recipe recipeText={recipeText} selectedIngredients={ingredients} />
       )}
-      <Footer/>
+       <Footer/>
+</>
+      }/>
+ 
+  <Route path="/favourites" element={<Favourites/>}></Route>
+   <Route path="/donate" element={<Donate/>}></Route>
+    <Route path="/search" element={<Search/>}></Route>
+ </Routes>
+
+
+
+
     </>
   );
 }

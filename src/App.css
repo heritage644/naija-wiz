@@ -5,11 +5,18 @@ html, body {
 }
 
 /* Header styles */
-header {
-  
+.forst{
+  width: 30px;
+  height: 10px; 
+  background-color: #8B4513;
+  border-radius: 300px 300px 0 0; /* Rounds top-left and top-right */
+}
 
-  
-
+.secomd{
+   width: 30px;
+  height: 10px; 
+  background-color: #8B4513;
+  border-radius: 0px 0px 300px 300px; /* Rounds top-left and top-right */  
 }
 .text-grad {
 

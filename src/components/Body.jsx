@@ -2,7 +2,10 @@ import { motion } from "framer-motion"
 import {useGSAP} from "@gsap/react"
 import gsap from "gsap"
 import HeroText from "./herotext"
-
+import Popup from "./popup"
+import MenuBar from "./menubar/menu-bar"
+import DisplayBox from "./menubar/display-box"
+import SideBar from "./menubar/sidebar"
 export default function Body ({ handleSubmit }){
 useGSAP(()=>{
   gsap.fromTo(".second",{
@@ -32,7 +35,11 @@ ease:'power1.in'
 })
 
 return (
-        <main>
+        <main className="">
+          <MenuBar/>
+          <DisplayBox/>
+          <SideBar/>
+          <Popup/>
           <section className="items-center flex justify-center mb-20"> 
             <HeroText/>
           </section>
