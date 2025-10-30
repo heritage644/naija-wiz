@@ -3,10 +3,11 @@ export const AppIcons = {
     star: (<Link to="/favourites">
     <lord-icon
       
-    src="https://cdn.lordicon.com/edplgash.json"
+    src="https://cdn.lordicon.com/cvwrvyjv.json"
     trigger="in"
-    delay="500"
+    delay="1500"
     state="in-dynamic"
+    colors="primary:#121331,secondary:#16c72e"
     style={{width:"30px", height:"50px"}}
     >
 </lord-icon>
@@ -14,11 +15,11 @@ export const AppIcons = {
 search: ( <Link to="/search">
 <lord-icon
         
-    src="https://cdn.lordicon.com/vgxjrbxm.json"
+   src="https://cdn.lordicon.com/wjyqkiew.json"
     trigger="in"
-    delay="500"
+    delay="1500"
     state="in-reveal"
-    colors="primary:#109121,secondary:#e86830"
+    colors="primary:#121331,secondary:#16c72e"
      style={{width:"30px", height:"50px"}}
     >
 </lord-icon>
@@ -28,12 +29,11 @@ donate :(
    <Link to="/donate">
      <lord-icon
        
-    src="https://cdn.lordicon.com/kezeezyg.json"
+     src="https://cdn.lordicon.com/kezeezyg.json"
     trigger="in"
-    delay="500"
-    stroke="light"
+    delay="1500"
     state="in-reveal"
-    colors="primary:#545454,secondary:#109121"
+    colors="primary:#121331,secondary:#16c72e"
      style={{width:"30px", height:"50px"}}
    >
 </lord-icon>

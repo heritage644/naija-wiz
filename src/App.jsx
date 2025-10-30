@@ -11,7 +11,7 @@ import {Routes, Route, Link} from 'react-router-dom'
 import Favourites from "./pages/favourites.jsx";
 import Donate from "./pages/donate.jsx";
 import Search from "./pages/search.jsx";
-
+import AuthModal from "./components/auth/user-name-modal.jsx";
 export default function App() {
 const {
 ingredients,
@@ -72,14 +72,14 @@ ingredients,
  const res = await  fetch("http://localhost:5000/api/recipe", {
   method: "POST",
   headers: {
-    "Content-Type": "application/json"
+    "Content-Type": "application/jsxon"
   },
-  body: JSON.stringify({ ingredients: joinedIngredients })
+  body: jsxON.stringify({ ingredients: joinedIngredients })
 });
 
       
      
-      const data = await res.json();
+      const data = await res.jsxon();
 
       if (!res.ok) {
         throw new Error(data.error || `Serve: ${res.status}`);
@@ -117,13 +117,12 @@ ingredients,
 
 
 
-
-
   return (
     <>
     
       <Header />
        <Routes>
+       
         <Route path="/" element={
           <>
       <Body handleSubmit={handleSubmit} />
@@ -140,7 +139,7 @@ ingredients,
        inset-0 flex items-center items-center justify-center flex-col ">
         <h1 className="text-[16px] font-bold ">Processing your recipe with love</h1>
         <lord-icon
-    src="https://cdn.lordicon.com/euaablbm.json"
+    src="https://cdn.lordicon.com/euaablbm.jsxon"
     trigger="loop"
     stroke="bold"
     state="loop-cycle"

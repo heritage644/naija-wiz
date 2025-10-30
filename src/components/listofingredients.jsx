@@ -12,8 +12,8 @@ export default function ListOfIngredients (props) {
             pt-10 space-y-10 
             font-bold text-[16px] lg:text-[20px]">{props.ingredientsListItems} </ul>
             { props.ingredientsList.length > 3 &&
-             <div className="third">
-               <div className="fourth">
+             <div className="third  ">
+               <div className="flex flex-col lg:ml-20 fourth">
                     <h3>Get your recipe</h3>
                     <p>Generate a perfect recipe for your list of ingredients</p>
                 </div>

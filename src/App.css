@@ -98,20 +98,16 @@ ul {
 .third {
     margin-top: 10px;
     background: #F0EFEB;
-    min-height: 120px;  /* Changed from fixed height to min-height */
+    min-height: 120px;  
     border-radius: 9px;
     padding: 10px;
     gap: 10px;
     display: flex;
     justify-content: space-between;
-    align-items: center;  /* Added for better alignment */
+    align-items: center;  
 }
 
-.fourth {
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-}
+
 
 .fourth > h3 {
     font-family: sans-serif;
@@ -126,8 +122,6 @@ ul {
     margin-top: 0px;
 }
 
-/* Main button - TESTING DIFFERENT ANIMATIONS */
-/* OPTION 1: Beautiful Emerald Green Glow */
 .btn {
     height: fit-content;
     padding: 20px;

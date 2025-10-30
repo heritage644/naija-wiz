@@ -6,11 +6,11 @@ export default function Recipe({ recipeText }) {
   const { addToFavourites, removeFromFavourites, favourites } = useStar();
   
  
-  const savedRecipe = favourites.find(fav => fav.recipeText === recipeText);
+  const savedRecipe = favourites.find((fav) => fav.recipeText === recipeText);
   const isSaved = !!savedRecipe; 
 
   return (
-    <section className="flex mt-10 w-full items-center sm:items-start lg:justify-start flex-col text-black">
+    <section className="flex lg:ml-20 mt-10 w-full items-center sm:items-start lg:justify-start flex-col text-black">
       <h2 className="text-[20px] font-bold items-center sm:ml-7 flex sm:px-10 rounded-lg px-2 justify-center bg-green-400 text-center 2xl:text-[30px]">
         Generated Recipe
       </h2>
@@ -24,7 +24,7 @@ export default function Recipe({ recipeText }) {
           
           {/* Conditionally render based on whether recipe is saved */}
           {!isSaved ? (
-            // NOT SAVED - Show "Add" button
+            
             <button className="bg-none" onClick={() => addToFavourites(recipeText)}>
               <lord-icon
                 className="w-10 h-13 lg:w-10 lg:h-20"
@@ -42,7 +42,7 @@ export default function Recipe({ recipeText }) {
                 className="w-10 h-10 lg:w-10 lg:h-20"
                 src="https://cdn.lordicon.com/edplgash.json"
                 trigger="in"
-                delay="1500"
+                delay="500"
                 state="in-dynamic"
               />
             </button>

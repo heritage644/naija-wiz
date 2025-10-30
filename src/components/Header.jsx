@@ -1,8 +1,6 @@
-import {useGSAP} from "@gsap/react"
 import gsap from "gsap"
 import { useEffect } from "react";
 import { SplitText } from "gsap/SplitText"
-import Cook from "../assets/cook.png";
 export default function Header (props) {
 
 useEffect(()=>{
@@ -35,7 +33,7 @@ ease:'power3.out',
 
 return (
 <header className="top-0 sticky z-[50] ">
-    <nav className="flex items-center justify-center backdrop-blur-sm max-w-full shadow-md bg-translucent py-10 space-x-2 ">
+    <nav className="flex items-center justify-center backdrop-blur-xl max-w-full shadow-md bg-translucent py-10 space-x-2 ">
          <div className="first"> 
              <lord-icon
              className=""
