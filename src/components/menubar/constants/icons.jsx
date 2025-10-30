@@ -7,7 +7,7 @@ export const AppIcons = {
     trigger="in"
     delay="500"
     state="in-dynamic"
-    style={{width:"30px", height:"20px"}}
+    style={{width:"30px", height:"50px"}}
     >
 </lord-icon>
     </Link>),
@@ -19,7 +19,7 @@ search: ( <Link to="/search">
     delay="500"
     state="in-reveal"
     colors="primary:#109121,secondary:#e86830"
-     style={{width:"30px", height:"20px"}}
+     style={{width:"30px", height:"50px"}}
     >
 </lord-icon>
 </Link>),
@@ -34,7 +34,7 @@ donate :(
     stroke="light"
     state="in-reveal"
     colors="primary:#545454,secondary:#109121"
-     style={{width:"30px", height:"20px"}}
+     style={{width:"30px", height:"50px"}}
    >
 </lord-icon>
    </Link>

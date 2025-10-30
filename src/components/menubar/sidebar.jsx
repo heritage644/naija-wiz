@@ -9,7 +9,8 @@ export default function SideBar() {
     <div
       onMouseEnter={() => setIsExpanded(true)}
       onMouseLeave={() => setIsExpanded(false)}
-      className={`fixed hidden lg:flex top-0 left-0 h-screen  bg-transparent backdrop-blur-sm shadow-lg text-white transition-all duration-300
+      className={`fixed hidden lg:flex top-0 left-0 h-screen pt-20  bg-[#F0EFEB] backdrop-blur-sm
+         shadow-lg text-white transition-all duration-300
         ${isExpanded ? "w-56" : "w-16"} flex flex-col items-start z-[999]`}
     >
       <div className="flex flex-col gap-1 mt-10 w-full">
@@ -24,7 +25,7 @@ export default function SideBar() {
 function SidebarItem({ icon, text, isExpanded }) {
   return (
     <div
-      className="flex items-center gap-4 px-4 py-3 hover:bg-green-100 cursor-pointer"
+      className="flex items-center gap-4 px-4 py-3 hover:bg-white cursor-pointer"
       title={text}
     >
       <div className="text-xl">{icon}</div>

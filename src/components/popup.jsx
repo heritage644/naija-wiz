@@ -35,7 +35,7 @@ const [hasLoaded, setHasLoaded] = useState(false);
              className="w-6 h-7"
     src="https://cdn.lordicon.com/pilfbsjh.json"
     trigger="in"
-    delay="1500"
+    delay="500"
     state="in-reveal"
     colors="primary:#000000,secondary:#e86830,tertiary:#109121"
     >
@@ -48,7 +48,7 @@ const [hasLoaded, setHasLoaded] = useState(false);
               className="w-6 h-7"
               src="https://cdn.lordicon.com/hqvguthc.json"
               trigger="in"
-              delay="1500"
+              delay="500"
               state="in-reveal"
               colors="primary:#000000,secondary:#109121"
             ></lord-icon>
