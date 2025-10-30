@@ -172,10 +172,12 @@ export default function App() {
 import { motion } from "framer-motion"
 import React, { useState } from "react";
 import "./App.css";
+import "./index.css"
 import Header from "./components/Header.jsx";
 import Body from "./components/Body.jsx";
 import Recipe from "./components/recipe.jsx";
 import ListOfIngredients from "./components/listofingredients.jsx";
+
 
 export default function App() {
   const [ingredients, setIngredients] = useState([]);
