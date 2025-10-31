@@ -11,7 +11,7 @@ import {Routes, Route, Link} from 'react-router-dom'
 import Favourites from "./pages/favourites.jsx";
 import Donate from "./pages/donate.jsx";
 import Search from "./pages/search.jsx";
-import AuthModal from "./components/auth/user-name-modal.jsx";
+
 export default function App() {
 const {
 ingredients,
@@ -29,7 +29,7 @@ ingredients,
 
 } = useStar()
 
-  // Handle form submission from Body component
+ 
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -96,7 +96,7 @@ ingredients,
   }
 
  
-  // Only fetches if we don't already have a recipe for the current ingredients.
+  
   function handleToggleRecipe() {
     const joined = ingredients.join(", ").trim();
 
