@@ -69,7 +69,7 @@ ingredients,
     setError("");
     try {
       const query = encodeURIComponent(joinedIngredients);
- const res = await  fetch("https://naijawiz-api.onrender.com/", {
+ const res = await  fetch("https://naijawiz-api.onrender.com/api/recipe", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
@@ -138,14 +138,7 @@ ingredients,
       {loading && <div className=" fixed backdrop-blur-lg bg-transparent  z-[1000]
        inset-0 flex items-center items-center justify-center flex-col ">
         <h1 className="text-[16px] font-bold ">Processing your recipe with love</h1>
-        <lord-icon
-    src="https://cdn.lordicon.com/euaablbm.jsxon"
-    trigger="loop"
-    stroke="bold"
-    state="loop-cycle"
-    colors="primary:#e86830,secondary:#109121"
-    style={{width:"100px", height:"100px"}}>
-</lord-icon>
+        <div className="spinner"></div>
         </div>}
 
       {showRecipe && !loading && !error && recipeText && (
