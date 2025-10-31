@@ -72,14 +72,14 @@ ingredients,
  const res = await  fetch("https://naijawiz-api.onrender.com/", {
   method: "POST",
   headers: {
-    "Content-Type": "application/jsxon"
+    "Content-Type": "application/json"
   },
-  body: jsxON.stringify({ ingredients: joinedIngredients })
+  body:JSON.stringify({ ingredients: joinedIngredients })
 });
 
       
      
-      const data = await res.jsxon();
+      const data = await res.json();
 
       if (!res.ok) {
         throw new Error(data.error || `Serve: ${res.status}`);
