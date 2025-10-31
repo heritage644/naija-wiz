@@ -69,7 +69,7 @@ ingredients,
     setError("");
     try {
       const query = encodeURIComponent(joinedIngredients);
- const res = await  fetch("http://localhost:5000/api/recipe", {
+ const res = await  fetch("https://naijawiz-api.onrender.com/", {
   method: "POST",
   headers: {
     "Content-Type": "application/jsxon"
@@ -95,7 +95,7 @@ ingredients,
     }
   }
 
-  // Called by the button in ListOfIngredients.
+ 
   // Only fetches if we don't already have a recipe for the current ingredients.
   function handleToggleRecipe() {
     const joined = ingredients.join(", ").trim();
