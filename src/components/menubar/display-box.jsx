@@ -10,9 +10,9 @@ const {isOpen} = useStar()
     return(
         <>{ isOpen ?
             
-        <motion.div initial={{ opacity: 0, scale: 0.8 }}
+        <motion.div initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.8 }}>
+        exit={{ opacity: 0, scale: 0 }}>
             <ul className="menu lg:hidden bg-white rounded-box w-56 text-black">
   <li>
     <h2 className="menu-title font-bold text-black">Chef's List</h2>
